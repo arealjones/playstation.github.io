@@ -76,6 +76,7 @@ function displayStreams() {
 function submitSearch() {
     document.getElementById('stream').innerHTML = '';
     document.getElementById('current-page').innerHTML = '0';
+    currentPage = 1;
     var search = document.getElementById('search').value;
     let gameURL = url.concat(search);
     findGameID(gameURL);
@@ -152,11 +153,13 @@ function findStreams(response) {
                     let count = 0;
                     var arr = [];
                     for (var i = 0; i < data['data'].length; i++) {
+                        let twitchURL = "https://www.twitch.tv/";
+                        let streamLink = twitchURL.concat(data['data'][i]['user_name']);
                         let thumbnail = data['data'][i]['thumbnail_url'];
                         let t1 = thumbnail.replace("{width}", "250");
                         let t2 = t1.replace("{height}", "150");
                         let text = '<div class="stream-content">' + '<img class="preview-image" src="' + t2 + '">' 
-                        + '<div class="text"><div class="display-name">' + data['data'][i]['user_name'] + '</div>' 
+                        + '<div class="text"><div class="display-name"><a href="' + streamLink + '">' + data['data'][i]['user_name'] + '</a></div>' 
                         + '<div class="game-and-views">' + data['data'][i]['game_name'] + ' - ' + data['data'][i]['viewer_count'] + ' viewers</div>' 
                         + '<div class="description"> Stream Description: ' + data['data'][i]['title'] + '</div>' + '</div>' + '</div>';
                         if (count < 5) {

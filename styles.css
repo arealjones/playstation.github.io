@@ -1,0 +1,134 @@
+/* Main Grid Elements */
+.container {
+    display: grid;
+    grid-template-rows: .1fr .1fr .1fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+        "left-sidebar header right-sidebar"
+        "left-sidebar search right-sidebar"
+        "left-sidebar content right-sidebar"
+    ;
+}
+
+#main-header {
+    grid-area: header;
+    background-color: #00AC9F;
+    color: black;
+    margin: 5px;
+}
+
+#main-left-sidebar {
+    grid-area: left-sidebar;
+}
+
+#main-right-sidebar {
+    grid-area: right-sidebar;
+}
+
+#main-search {
+    height: 40px;
+    grid-area: search;
+}
+#main-content {
+    grid-area: content;
+}
+
+/* Search Container */
+#search {
+    margin: 5px;
+}
+
+#alert {
+    padding: 20px;
+    background-color: #F3C300;
+    display: none;
+}
+
+#submit-button {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+/* Stream Container */
+.main-area {
+    background-color: #00AC9F;
+    margin: 5px;
+}
+
+#streams {
+    margin: 20px;
+}
+#count {
+    margin-bottom: 10px;
+    float: left !important;
+    color: black;
+}
+
+#page {
+    display: flex;
+    justify-content: end;
+}
+
+#current-page {
+    color: black;
+}
+
+#left-triangle {
+    border-right-color: black;
+    border-left-color: transparent;
+    margin-right: 5px;
+    
+}
+#right-triangle {
+    border-right-color: transparent;
+    border-left-color: black;
+    margin-left: 5px;
+}
+
+.triangle {
+    color: white;
+    width: 0px;
+    height: 0px;
+    border: 10px solid black;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+/* Individual Stream */
+.stream-content {
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text {
+    height: 100px;
+    width: 75%;
+    margin: 15px;
+}
+.display-name {
+    font-weight: bold;
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+
+.preview-image {
+    margin: 10px;
+}
+
+
+/* MISC */
+.box {
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

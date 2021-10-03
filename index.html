@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PlayStation Homework</title>
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div id="main-header" class="box center">
+                <h1>Search for Live Twitch Streams by Game Name</h1>
+            </div>
+            <div id="main-left-sidebar"></div>
+            <div id="main-search">
+                <div class="main-area box center">
+                    <input id="search" type="text" placeholder="Search query..."/>
+                    <button id="submit-button" disabled>Search</button>
+                </div>
+                <div id="alert" class="main-area box center">
+                    <strong>Warning!</strong> There are no streams with that game name, please try again.
+                </div>
+            </div>
+            <div id="main-content" class="main-area box">
+                <div id="streams">
+                    <div>
+                        <div id="count"></div>
+                        <div id="page">
+                            <div id="left-triangle" class="triangle"></div>
+                            <div id="current-page">0</div>
+                            <div id="right-triangle" class="triangle"></div>
+                        </div>
+                    </div>
+                    <div id="stream"></div>
+                </div>
+            </div>
+            <div id="main-right-sidebar"></div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
